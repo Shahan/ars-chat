@@ -10,7 +10,10 @@ if(isset($_POST['msg']) && $_POST['msg']!="" && $_POST['msg']!=" ")
 	$to = 'all';
 	$message=$_POST['msg'];
 	$when = date("Y-m-d H:i:s");
-	$room = 'Public';
+	if(isset($_POST['room']) && ($_POST['room']==1 || $_POST['room']==2 || $_POST['room']==3))
+	{
+		$room = strval($_POST['room']);
+	} else $room = strval(1);
 	$extra = 'None';
 	
 	
