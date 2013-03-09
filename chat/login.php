@@ -1,4 +1,8 @@
 <?php
+/* 
+	github.com/Shahan/ars-chat
+	chat/login.php : returns form for login or creates session using info sent by ajax request
+*/
 //check if nothing in POST
 if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login']!=" " && $_POST['login']!="" && $_POST['password']!="" && $_POST['password']!=" ")
 {

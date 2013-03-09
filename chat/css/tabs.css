@@ -2,7 +2,7 @@
 .wrap {width:500px; margin:50px auto;}
 .clear {clear:both;}
 
-ul.tabs {list-style:none; width:500px;}
+ul.tabs {list-style:none; width:600px;}
 ul.tabs li:first-child {border-left:1px solid #ccc;}
 ul.tabs li {float:left; border-right:1px solid #ccc; border-top:1px solid #ccc; background-color:#eee;}
 ul.tabs li.active {border-bottom:1px solid #fff; background-color:#fff; margin-bottom:-1px;}

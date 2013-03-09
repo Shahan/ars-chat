@@ -7,7 +7,7 @@ function LoginUser()
 	// Отсылаем паметры
 	$.ajax({
 			type: "POST",
-			url: "profile.php",
+			url: "chat/profile.php",
 			data: "request=login&login="+inp_login+"&password="+inp_password,
 			// Выводим то что вернул PHP
 			success: function(html) {
@@ -17,6 +17,9 @@ function LoginUser()
 				$("#user_panel").append(html);
 			}
 	});
+	
+	//update user info
+	init_username();
 }
 
 function register()
@@ -31,7 +34,7 @@ function register()
 	// Отсылаем паметры
 	$.ajax({
 			type: "POST",
-			url: "profile.php",
+			url: "chat/profile.php",
 			data: "request=register&login="+inp_login+"&password="+inp_password+"&email="+inp_email+"&country="+inp_country+"&langs="+inp_langs+"&birthday="+inp_birthday,
 			// Выводим то что вернул PHP
 			success: function(html) {
@@ -41,13 +44,16 @@ function register()
 				$("#user_panel").append(html);
 			}
 	});
+	
+	//update user info
+	init_username();
 }
 
 function logout()
 {
 	$.ajax({
 			type: "POST",
-			url: "profile.php",
+			url: "chat/profile.php",
 			data: "request=logout",
 			// Выводим то что вернул PHP
 			success: function(html) {
@@ -57,4 +63,7 @@ function logout()
 				$("#user_panel").append(html);
 			}
 		});
+		
+	//update user info
+	init_username();
 }

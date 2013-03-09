@@ -1,5 +1,8 @@
 <?php
- 
+ /* 
+	github.com/Shahan/ars-chat
+	chat/register.php : adds new user info sent by ajax request to DB
+*/
 //Check for data in POST
 if(isset($_POST['login']) && isset($_POST['password']))
 {

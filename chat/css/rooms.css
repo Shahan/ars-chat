@@ -1,21 +1,27 @@
 #msgs_room1
 {
-	width:300px;
+	width:100%;
 	height:150px;
 	overflow:auto;
 	border:1px solid silver;
 }
 #msgs_room2
 {
-	width:300px;
+	width:100%;
 	height:150px;
 	overflow:auto;
 	border:1px solid silver;
 }
 #msgs_room3
 {
-	width:300px;
+	width:100%;
 	height:150px;
 	overflow:auto;
 	border:1px solid silver;
 }
+
+div#username{
+ position: fixed;
+ bottom: 10px;
+ z-index: 100;
+ }

@@ -1,5 +1,8 @@
 <?php
-
+/* 
+	github.com/Shahan/ars-chat
+	chat/logout.php : clears session(cookies) by ajax request
+*/
 //clear session
 unset($_SESSION['login']);
 unset($_SESSION['id']);
