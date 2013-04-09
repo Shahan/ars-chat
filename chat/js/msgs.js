@@ -26,9 +26,6 @@ function load_msgs(room)
 }
 function send(room)
 {
-	//update user info
-	init_username();
-	
 	//Get msg from input box with id mess_to_add
 	var msg=$("#msg__from_room"+room).val();
 	var usrname=$("#guestname_"+room).val();
