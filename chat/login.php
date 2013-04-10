@@ -29,6 +29,9 @@ if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login']!=" " &
     }	
 	if(!isset($error)) //no errors
 	{
+		if(isset($_POST['remember']) && $_POST['remember']=="true") 
+			session_cache_expire(9999);
+		else session_cache_expire(180);
 		//set session variables
 		$_SESSION['login']=$data['login'];
 		$_SESSION['id']=$data['id'];
@@ -37,7 +40,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login']!=" " &
 		$user=$_SESSION['login'];
 		$res=mysql_query("SELECT * FROM `users` WHERE `login`='$user' ");
 		$user_data=mysql_fetch_array($res);
-		echo '<font color=green>Logged in</font>';
+		echo '<font color=green>Logged in for '. session_cache_expire() .'minutes</font>';
 		echo "<center>";
 		echo "Logged as: <b>". $user_data['login']."</b><br>";
 		echo "Your email: <b>". $user_data['email']."</b><br>";
@@ -55,6 +58,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login']!=" " &
 			<h3>Try to login again:</h3>
 			Login: <br> <input type="text" name="log_login" id="log_login" value="<? echo $login;?>"><br>
 			Password: <br> <input type="password" name="log_password" id="log_password"><br>
+			<input name="remember" type="checkbox" value="1">Remember me<br>
 			<input type="button" onclick="LoginUser();" value="Login">
 			
 			<h3>or register, of you are not registered yet:</h3>

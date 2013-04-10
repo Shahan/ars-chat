@@ -1,19 +1,21 @@
 
 function LoginUser()
 {
-	//Получаем параметры
+	//get parametrs
 	var inp_login = $('#log_login').val();
 	var inp_password = $('#log_password').val();
-	// Отсылаем паметры
+	var inp_remember=$("input[type='checkbox']").prop('checked');
+	
+	// send parametrs
 	$.ajax({
 			type: "POST",
 			url: "chat/profile.php",
-			data: "request=login&login="+inp_login+"&password="+inp_password,
-			// Выводим то что вернул PHP
+			data: "request=login&login="+inp_login+"&password="+inp_password+"&remember=" + inp_remember,
+			// output what PHP returned
 			success: function(html) {
-				//предварительно очищаем нужный элемент страницы
+				//firstly clear the required part of the page
 				$("#user_panel").empty();
-				//и выводим ответ php скрипта
+				//and print PHP answer
 				$("#user_panel").append(html);
 			}
 	});
@@ -24,23 +26,23 @@ function LoginUser()
 
 function register()
 {
-	//Получаем параметры
+	//get parametrs
 	var inp_login = $('#reg_login').val();
 	var inp_password = $('#reg_password').val();
 	var inp_email = $('#email').val();
 	var inp_country = $('#country').val();
 	var inp_langs = $('#langs').val();
 	var inp_birthday = $('#birthday').val();
-	// Отсылаем паметры
+	// send parametrs
 	$.ajax({
 			type: "POST",
 			url: "chat/profile.php",
 			data: "request=register&login="+inp_login+"&password="+inp_password+"&email="+inp_email+"&country="+inp_country+"&langs="+inp_langs+"&birthday="+inp_birthday,
-			// Выводим то что вернул PHP
+			// output what PHP returned
 			success: function(html) {
-				//предварительно очищаем нужный элемент страницы
+				//firstly clear the required part of the page
 				$("#user_panel").empty();
-				//и выводим ответ php скрипта
+				//and print PHP answer
 				$("#user_panel").append(html);
 			}
 	});
@@ -55,11 +57,11 @@ function logout()
 			type: "POST",
 			url: "chat/profile.php",
 			data: "request=logout",
-			// Выводим то что вернул PHP
+			// output what PHP returned
 			success: function(html) {
-				//предварительно очищаем нужный элемент страницы
+				//firstly clear the required part of the page
 				$("#user_panel").empty();
-				//и выводим ответ php скрипта
+				//and print PHP answer
 				$("#user_panel").append(html);
 			}
 		});

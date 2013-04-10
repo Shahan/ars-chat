@@ -23,6 +23,7 @@ echo'
 			<h3>Login:</h3>
 			Login: <br> <input type="text" name="log_login" id="log_login"><br>
 			Password: <br> <input type="password" name="log_password" id="log_password"><br>
+			<input name="remember" type="checkbox" value="1">Remember me<br>
 			<input type="button" onclick="LoginUser();" value="Login">
 		</form>
 </center>';
