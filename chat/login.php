@@ -13,6 +13,8 @@ if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login']!=" " &
 	//Set variables
     $login=htmlspecialchars(trim($_POST['login']));
     $password=htmlspecialchars(trim($_POST['password']));
+	//some protection convertation. The same is in registe.php
+	$password = md5(md5($login . "wtf")+md5($password . "wtf"));
  
 	//Check for user with such login in DB
     $res=mysql_query("SELECT * FROM `users` WHERE `login`='$login' ");

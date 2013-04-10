@@ -38,6 +38,8 @@ if(isset($_POST['login']) && isset($_POST['password']))
 		}
 		else
 		{ 
+			//some protection, replace 'wtf' by whatever you want
+			$password = md5(md5($login . "wtf")+md5($password . "wtf"));
 			//Insert new user to DB
 			$query="INSERT INTO `users` (`login`,`password`,`email`,`country`,`langs`, `birthday`, `lvl`) VALUES('$login','$password','$email','$country','$langs', '$birthday','0') ";
 			$result=mysql_query($query);
