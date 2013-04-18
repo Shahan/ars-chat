@@ -7,12 +7,12 @@
 if(isset($_POST['login']) && isset($_POST['password']))
 {
 //set variables
-    $login=htmlspecialchars(trim($_POST['login']));
-    $password=htmlspecialchars(trim($_POST['password']));
-    $email=htmlspecialchars(trim($_POST['email']));
-    $country=htmlspecialchars(trim($_POST['country']));
-    $langs=htmlspecialchars(trim($_POST['langs']));
-	$birthday=htmlspecialchars(trim($_POST['birthday']));
+    $login=htmlspecialchars(trim($_POST['login']), ENT_QUOTES);
+    $password=htmlspecialchars(trim($_POST['password']), ENT_QUOTES);
+    $email=htmlspecialchars(trim($_POST['email']), ENT_QUOTES);
+    $country=htmlspecialchars(trim($_POST['country']), ENT_QUOTES);
+    $langs=htmlspecialchars(trim($_POST['langs']), ENT_QUOTES);
+	$birthday=htmlspecialchars(trim($_POST['birthday']), ENT_QUOTES);
 	//If empty
     if($login=="" || $password=="" || $email=="" || $country=="" || $langs=="" || $birthday=="")
     {

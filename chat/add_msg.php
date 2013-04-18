@@ -20,7 +20,7 @@ if(isset($_POST['msg']) && $_POST['msg']!="" && $_POST['msg']!=" ")
 		
 	}
 	$to = 'all';
-	$message=$_POST['msg'];
+	$message=addslashes(htmlspecialchars($_POST['msg'], ENT_QUOTES));
 	$when = date("Y-m-d H:i:s");
 	if(isset($_POST['room']) && ($_POST['room']==1 || $_POST['room']==2 || $_POST['room']==3))
 	{

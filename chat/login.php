@@ -11,8 +11,8 @@ if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login']!=" " &
     include("bd.php");
  
 	//Set variables
-    $login=htmlspecialchars(trim($_POST['login']));
-    $password=htmlspecialchars(trim($_POST['password']));
+    $login=htmlspecialchars(trim($_POST['login']), ENT_QUOTES);
+    $password=htmlspecialchars(trim($_POST['password']), ENT_QUOTES);
 	//some protection convertation. The same is in registe.php
 	$password = md5(md5($login . "wtf")+md5($password . "wtf"));
  
